@@ -27,23 +27,9 @@ func createDefaultBoard() [boardSize][boardSize]string {
 
 func copyBoard(src [boardSize][boardSize]string) [boardSize][boardSize]string {
 	var dest [boardSize][boardSize]string
-
-	// option 1
-	// for i := range src {
-	// 	for j := range src[i] {
-	// 		dest[i][j] = src[i][j]
-	// 		copy(dest[i][j], src[i][j])
-	// 	}
-	// }
-
-	// option 2
-	// copy(dest[:], src[:])
-
-	// option 3
 	for i := range src {
 		copy(dest[i][:], src[i][:])
 	}
-
 	return dest
 }
 
